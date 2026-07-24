@@ -174,6 +174,7 @@ class BackupController extends Controller
     // Download backup
     public function download($filename)
     {
+        $filename = basename($filename);
         $filepath = storage_path('app/backups/' . $filename);
         
         if (!File::exists($filepath)) {
@@ -188,6 +189,7 @@ class BackupController extends Controller
     // Hapus backup
     public function delete($filename)
     {
+        $filename = basename($filename);
         $filepath = storage_path('app/backups/' . $filename);
         
         if (File::exists($filepath)) {

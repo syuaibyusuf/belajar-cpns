@@ -62,7 +62,7 @@ class DashboardController extends Controller
             $query->where('category', 'tkp');
         }
         
-        $materi = $query->orderBy('category')->orderBy('order_number')->get();
+        $materi = $query->orderBy('category')->orderBy('order_number')->paginate(20);
         
         return view('user.materi-list-all', compact('materi', 'allMateri'));
     }

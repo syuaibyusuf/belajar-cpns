@@ -21,7 +21,7 @@ class TryoutController extends Controller
 
     public function index()
     {
-        $tryouts = Tryout::where('status', 'active')->latest()->get();
+        $tryouts = Tryout::where('status', 'active')->latest()->paginate(12);
         return view('user.tryout-list', compact('tryouts'));
     }
 

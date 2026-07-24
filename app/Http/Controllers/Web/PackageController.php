@@ -22,7 +22,7 @@ class PackageController extends Controller
         // Ambil semua paket yang aktif, urutkan dari terbaru
         $allPackages = Package::where('status', 'active')
             ->orderBy('created_at', 'desc')
-            ->get();
+            ->paginate(12);
         
         $packagesByCategory = [
             'twk' => Package::where('status', 'active')->where('category', 'twk')->get(),
