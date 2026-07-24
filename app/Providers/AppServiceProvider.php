@@ -4,7 +4,6 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
-use Illuminate\Support\Facades\Cache;
 use App\Models\Question;
 use App\Models\UserProgress;
 
@@ -24,19 +23,15 @@ class AppServiceProvider extends ServiceProvider
                 return;
             }
 
-            $totalSoal = cache()->remember('total_soal_count', 3600, function () {
-                return Question::count();
-            });
+            $totalSoal = Question::count();
 
             $progress = UserProgress::where('session_id', $sessionId)->get();
             $totalDikerjakan = $progress->sum('total_questions');
 
             $statistik = [];
-            $questionCounts = cache()->remember('question_counts_by_category', 3600, function () {
-                return Question::selectRaw('category, count(*) as total')
-                    ->groupBy('category')
-                    ->pluck('total', 'category');
-            });
+            $questionCounts = Question::selectRaw('category, count(*) as total')
+                ->groupBy('category')
+                ->pluck('total', 'category');
 
             foreach (['twk', 'tiu', 'tkp'] as $cat) {
                 $total = $questionCounts[$cat] ?? 0;
