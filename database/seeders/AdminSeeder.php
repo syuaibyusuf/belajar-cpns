@@ -10,18 +10,22 @@ class AdminSeeder extends Seeder
 {
     public function run(): void
     {
-        Admin::create([
-            'name' => 'Super Admin',
-            'email' => 'admin@admin.com',
-            'password' => Hash::make('password'),
-            'role' => 'superadmin'
-        ]);
+        Admin::firstOrCreate(
+            ['email' => 'admin@admin.com'],
+            [
+                'name' => 'Super Admin',
+                'password' => Hash::make('password'),
+                'role' => 'superadmin'
+            ]
+        );
         
-        Admin::create([
-            'name' => 'Editor',
-            'email' => 'editor@admin.com',
-            'password' => Hash::make('password'),
-            'role' => 'editor'
-        ]);
+        Admin::firstOrCreate(
+            ['email' => 'editor@admin.com'],
+            [
+                'name' => 'Editor',
+                'password' => Hash::make('password'),
+                'role' => 'editor'
+            ]
+        );
     }
 }

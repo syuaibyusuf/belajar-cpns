@@ -10,6 +10,9 @@ class TryoutSeeder extends Seeder
 {
     public function run(): void
     {
+        TryoutQuestion::truncate();
+        Tryout::truncate();
+
         $tryouts = [
             [
                 'name' => 'Try Out CPNS - Paket 1',

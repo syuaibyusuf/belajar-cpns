@@ -10,6 +10,9 @@ class PackageSeeder extends Seeder
 {
     public function run(): void
     {
+        PackageQuestion::truncate();
+        Package::truncate();
+
         $packages = [
             [
                 'name' => 'Paket TWK - Wawasan Kebangsaan',
