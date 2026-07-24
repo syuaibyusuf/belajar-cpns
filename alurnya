@@ -1,0 +1,333 @@
+📁 belajar-cpns/
+│
+├── 📁 app/
+│   │
+│   ├── 📁 Http/
+│   │   │
+│   │   ├── 📁 Controllers/
+│   │   │   │
+│   │   │   ├── 📁 Admin/                    // Controller untuk admin panel
+│   │   │   │   ├── AdminDashboardController.php   // Dashboard admin, grafik, statistik
+│   │   │   │   ├── AuthController.php             // Login & logout admin
+│   │   │   │   ├── MateriController.php           // CRUD materi (tambah, edit, hapus materi)
+│   │   │   │   ├── PackageController.php          // CRUD paket soal (10-50 soal)
+│   │   │   │   ├── SoalController.php             // CRUD soal untuk latihan acak
+│   │   │   │   └── TryoutController.php           // CRUD try out (110 soal)
+│   │   │   │
+│   │   │   └── 📁 Web/                      // Controller untuk user (tanpa login)
+│   │   │       ├── DashboardController.php       // Halaman utama, materi, latihan
+│   │   │       ├── PackageController.php          // Paket soal user
+│   │   │       └── TryoutController.php           // Try out user (110 soal, timer)
+│   │   │
+│   │   └── 📁 Middleware/                  // Filter request sebelum masuk controller
+│   │       ├── AdminAuth.php                     // Cek apakah user sudah login sebagai admin
+│   │       └── ShareUserData.php                 // Share data progress ke semua halaman
+│   │
+│   ├── 📁 Models/                         // Representasi tabel database
+│   │   ├── Admin.php                           // Model untuk tabel admins
+│   │   ├── Materi.php                          // Model untuk tabel materi (dengan gambar)
+│   │   ├── Package.php                         // Model untuk tabel paket soal
+│   │   ├── PackageQuestion.php                 // Model untuk soal dalam paket
+│   │   ├── Question.php                        // Model untuk soal (legacy)
+│   │   ├── Tryout.php                          // Model untuk try out
+│   │   ├── TryoutQuestion.php                  // Model untuk soal try out
+│   │   └── UserProgress.php                    // Model untuk progress user (tanpa login)
+│   │
+│   └── 📁 Providers/
+│       └── AppServiceProvider.php              // Register service & share data ke view
+│
+├── 📁 bootstrap/
+│   └── app.php                           // Konfigurasi middleware & routing Laravel
+│
+├── 📁 database/
+│   │
+│   ├── 📁 migrations/                    // File untuk membuat struktur tabel
+│   │   ├── 2024_01_01_000001_create_admins_table.php         // Tabel admin login
+│   │   ├── 2024_01_01_000002_create_materi_table.php         // Tabel materi belajar
+│   │   ├── 2024_01_01_000003_create_questions_table.php      // Tabel soal (legacy)
+│   │   ├── 2024_01_01_000004_create_user_progress_table.php  // Tabel progress user
+│   │   ├── 2024_01_01_000005_add_image_columns_to_materi.php // Kolom gambar di materi
+│   │   ├── 2024_01_01_000007_add_image_columns_to_questions.php // Kolom gambar di soal
+│   │   ├── 2024_01_01_000008_create_tryouts_table.php        // Tabel try out
+│   │   ├── 2024_01_01_000009_create_tryout_questions_table.php // Tabel soal try out
+│   │   ├── 2024_01_01_000010_create_packages_table.php       // Tabel paket soal
+│   │   ├── 2024_01_01_000011_create_package_questions_table.php // Tabel soal paket
+│   │   ├── 2026_05_21_151119_create_sessions_table.php       // Tabel session Laravel
+│   │   └── 2026_05_21_151153_create_cache_table.php          // Tabel cache Laravel
+│   │
+│   └── 📁 seeders/                       // File untuk mengisi data awal
+│       ├── AdminSeeder.php                    // Isi data admin default
+│       ├── MateriSeeder.php                   // Isi data materi contoh
+│       └── QuestionSeeder.php                 // Isi data soal contoh
+│
+├── 📁 public/
+│   │
+│   └── 📁 uploads/                        // Tempat penyimpanan file upload
+│       ├── 📁 materi/                         // Gambar materi (thumbnail & konten)
+│       └── 📁 tryouts/                        // Gambar try out
+│
+├── 📁 resources/
+│   │
+│   └── 📁 views/                          // File tampilan (HTML + Blade)
+│       │
+│       ├── 📁 layouts/                    // Template dasar
+│       │   ├── admin.blade.php                // Layout untuk admin (dengan sidebar)
+│       │   └── user.blade.php                 // Layout untuk user (dengan sidebar)
+│       │
+│       ├── 📁 admin/                      // Halaman admin
+│       │   ├── 📁 auth/
+│       │   │   └── login.blade.php            // Halaman login admin
+│       │   ├── dashboard.blade.php            // Dashboard admin (statistik, grafik)
+│       │   ├── 📁 materi/
+│       │   │   ├── index.blade.php            // Daftar materi
+│       │   │   ├── create.blade.php           // Form tambah materi (dengan upload gambar)
+│       │   │   └── edit.blade.php             // Form edit materi
+│       │   ├── 📁 packages/
+│       │   │   ├── index.blade.php            // Daftar paket soal
+│       │   │   ├── create.blade.php           // Form buat paket
+│       │   │   ├── edit.blade.php             // Form edit paket
+│       │   │   └── edit-questions.blade.php   // Form buat 10-50 soal dalam paket
+│       │   ├── 📁 soal/
+│       │   │   ├── index.blade.php            // Daftar soal
+│       │   │   ├── create.blade.php           // Form tambah soal
+│       │   │   └── edit.blade.php             // Form edit soal
+│       │   └── 📁 tryouts/
+│       │       ├── index.blade.php            // Daftar try out
+│       │       ├── create.blade.php           // Form buat try out
+│       │       ├── edit.blade.php             // Form edit try out
+│       │       └── edit-questions.blade.php   // Form buat 110 soal try out
+│       │
+│       └── 📁 user/                       // Halaman user (tanpa login)
+│           ├── dashboard.blade.php            // Halaman utama (welcome, progres, materi)
+│           ├── latihan.blade.php              // Halaman pilih latihan
+│           ├── materi-list-all.blade.php      // Semua materi dengan filter
+│           ├── materi-list.blade.php          // Materi per kategori (TWK/TIU/TKP)
+│           ├── materi-detail.blade.php        // Detail materi (dengan lightbox gambar)
+│           ├── package-list.blade.php         // Daftar paket soal dengan filter
+│           ├── package-test.blade.php         // Mengerjakan paket soal (navigasi kanan)
+│           ├── package-result.blade.php       // Hasil paket soal (skor + pembahasan)
+│           ├── tryout-list.blade.php          // Daftar try out
+│           ├── tryout-test.blade.php          // Mengerjakan try out (timer 100 menit)
+│           ├── tryout-result.blade.php        // Hasil try out (skor per kategori)
+│           └── 📁 partials/
+│               └── package-items.blade.php    // Potongan kode untuk list paket
+│
+├── 📁 routes/
+│   └── web.php                           // Daftar semua URL website
+│
+└── 📄 .env                               // Konfigurasi database & environment
+
+
+Step 1. >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+# 🎯 Belajar CPNS - Aplikasi Latihan Soal CPNS
+
+Aplikasi berbasis web untuk latihan soal CPNS dengan materi TWK, TIU, dan TKP. Dilengkapi dengan paket soal, try out, dan sistem penilaian yang sesuai standar CPNS.
+
+## ✨ Fitur
+
+- 📚 **Materi Belajar** - Materi TWK, TIU, TKP dengan dukungan gambar
+- 📦 **Paket Soal** - Latihan soal 10-50 soal per paket
+- 🎯 **Try Out** - Simulasi ujian 110 soal (30 TWK + 35 TIU + 45 TKP)
+- ⏱️ **Timer** - Try out dengan batas waktu 100 menit
+- 🖼️ **Gambar** - Mendukung gambar di soal dan materi
+- 📊 **Penilaian** - TWK/TIU (5 poin), TKP (skala 1-5)
+- 🛡️ **Admin Panel** - CRUD materi, soal, paket, try out
+- 📱 **Responsive** - Tampilan menarik di desktop dan mobile
+
+## 🛠️ Persyaratan Sistem
+
+- PHP >= 8.3.31
+- Composer
+- MySQL / MariaDB
+- Node.js & NPM (opsional)
+
+## 🚀 Instalasi
+
+### 1. Clone Repository
+
+```bash
+git clone https://github.com/username/belajar-cpns.git
+cd belajar-cpns
+
+
+Step 2. Install dependencies
+composer install
+npm install
+
+
+
+step 3  Konfigurasi environment
+cp .env.example .env
+php artisan key:generate
+
+Edit file .env dan sesuaikan database:
+
+env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=belajar_cpns
+DB_USERNAME=root
+DB_PASSWORD=
+
+
+step 4   Jalankan migrations
+
+php artisan migrate
+
+
+step 5   Jalankan Seeder (Data Awal)
+
+php artisan db:seed --class=AdminSeeder
+php artisan db:seed --class=MateriSeeder
+php artisan db:seed --class=QuestionSeeder
+
+step 6 buat folders uploads 
+
+mkdir -p public/uploads/materi
+mkdir -p public/uploads/tryouts
+
+step 7  Set Permission (Linux/Mac)
+
+chmod -R 775 storage bootstrap/cache
+chmod -R 775 public/uploads
+
+
+8. Jalankan Server
+bash
+php artisan serve
+Akses aplikasi di: http://localhost:8000
+
+🔐 Login Admin
+URL: http://localhost:8000/admin/login
+
+Email: admin@admin.com
+
+Password: password
+
+📁 Struktur Database
+Tabel	Fungsi
+admins	Data admin
+materi	Materi belajar
+questions	Soal (legacy)
+packages	Paket soal
+package_questions	Soal dalam paket
+tryouts	Try out
+tryout_questions	Soal try out
+user_progress	Progress user
+
+
+
+struktur folder 
+
+
+belajar-cpns/
+├── app/
+│   ├── Http/Controllers/
+│   │   ├── Admin/          # Admin controllers
+│   │   └── Web/            # User controllers
+│   └── Models/             # Database models
+├── database/
+│   ├── migrations/         # Database migrations
+│   └── seeders/            # Data seeder
+├── public/uploads/
+│   ├── materi/             # Gambar materi
+│   └── tryouts/            # Gambar try out
+├── resources/views/
+│   ├── admin/              # Admin pages
+│   ├── layouts/            # Base layouts
+│   └── user/               # User pages
+└── routes/
+    └── web.php             # Route definitions
+
+
+Panduan Memindahkan ke Komputer Lain
+
+Langkah 1: Kompres File (di komputer sumber)
+
+bash
+
+rm -rf vendor node_modules
+zip -r belajar-cpns.zip belajar-cpns/ -x "belajar-cpns/vendor/*" -x "belajar-cpns/node_modules/*"
+
+Langkah 2: Export Database
+
+bash
+
+mysqldump -u root -p belajar_cpns > belajar_cpns.sql
+
+Langkah 3: Pindahkan File ke Komputer Tujuan
+
+Pindahkan 2 file: belajar-cpns.zip dan belajar_cpns.sql
+
+Langkah 4: Extract di Komputer Tujuan
+
+bash
+
+unzip belajar-cpns.zip
+
+cd belajar-cpns
+Langkah 5: Install Dependencies
+
+bash
+composer install
+
+Langkah 6: Buat File .env Baru
+
+bash
+
+cp .env.example .env
+php artisan key:generate
+Edit .env sesuai database lokal.
+
+Langkah 7: Import Database
+bash
+mysql -u root -p belajar_cpns < belajar_cpns.sql
+Langkah 8: Buat Folder Uploads
+bash
+mkdir -p public/uploads/materi
+mkdir -p public/uploads/tryouts
+Langkah 9: Clear Cache
+bash
+php artisan optimize:clear
+Langkah 10: Jalankan Server
+bash
+php artisan serve
+🧪 Testing & Cek Error
+Cek Error
+bash
+php artisan route:list
+tail -50 storage/logs/laravel.log
+php artisan tinker
+DB::connection()->getPdo();
+exit;
+Aktifkan Debug Mode
+Di file .env:
+
+env
+APP_DEBUG=true
+APP_ENV=local
+Perintah yang Tersedia
+Perintah	Fungsi
+php artisan route:list	Menampilkan semua route
+php artisan config:clear	Menghapus cache konfigurasi
+php artisan view:clear	Menghapus cache view
+php artisan cache:clear	Menghapus cache aplikasi
+php artisan optimize:clear	Menghapus semua cache
+📝 Catatan
+Pastikan PHP versi 8.3.31 atau lebih tinggi
+
+Pastikan ekstensi PHP: openssl, pdo_mysql, mbstring, tokenizer, xml
+
+Untuk production, set APP_DEBUG=false
+
+Folder vendor dan node_modules tidak perlu dipindah, install ulang saja
+
+🤝 Kontribusi
+Silakan buat issue atau pull request untuk kontribusi.
+
+📄 Lisensi
+MIT License
+
+
