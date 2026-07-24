@@ -191,90 +191,91 @@ class PackageSeeder extends Seeder
                 ]
             ],
 
-            // ==================== TKP (5 PAKET) ====================
+            // ==================== TKP (5 PAKET) - SKOR 1-5 ====================
             [
                 'name' => 'TKP - Pelayanan Publik',
                 'category' => 'tkp',
-                'description' => 'Latihan soal TKP tentang pelayanan publik dan kepuasan masyarakat.',
+                'description' => 'Latihan soal TKP tentang pelayanan publik dan kepuasan masyarakat. Skor 1-5 per opsi.',
                 'questions' => [
-                    ['Warga datang mengeluh marah. Sikap Anda?', 'Balas marah', 'Dengar sabar empati', 'Suruh pulang', 'Abaikan', 'Panggil satpam', 'b', 'Mendengar sabar adalah pelayanan prima'],
-                    ['Warga buta huruf lansia urus dokumen. Sikap?', 'Bantu sabar bahasa sederhana', 'Suruh pulang cari pendamping', 'Bicara keras', 'Abaikan layani lain', 'Suruh loket lain', 'a', 'Bantu dengan sabar dan bahasa sederhana'],
-                    ['Warga tawari hadiah setelah dibantu. Sikap?', 'Tolak sopan', 'Terima', 'Minta lebih', 'Terima lapor', 'Terima syarat diam', 'a', 'Tolak sopan karena sudah kewajiban'],
-                    ['Warga layanan tak sesuai prosedur. Sikap?', 'Layani kasihan', 'Jelaskan prosedur dan cari solusi', 'Suruh pergi', 'Terima imbalan', 'Abaikan', 'b', 'Jelaskan prosedur dan cari solusi alternatif'],
-                    ['Warga tidak puas dengan pelayanan. Sikap?', 'Minta maaf dan perbaiki', 'Bela diri salahkan warga', 'Jelaskan keterbatasan', 'Abaikan', 'Lapor atasan', 'a', 'Minta maaf dan berjanji perbaiki pelayanan'],
-                    ['Pelayanan publik harus berdasarkan...', 'Kekuasaan', 'Prosedur dan standar', 'Keinginan pribadi', 'Perintah atasan', 'Kebiasaan', 'b', 'Berdasarkan prosedur dan standar pelayanan'],
-                    ['Prinsip pelayanan prima adalah...', 'Cepat, tepat, ramah', 'Keras, tegas, cepat', 'Lambat, hati-hati', 'Semau saya', 'Sesuai mood', 'a', 'Cepat, tepat, ramah, dan transparan'],
-                    ['Sikap yang harus dihindari dalam pelayanan...', 'Senyum', 'Sapa', 'Diskriminasi', 'Sabar', 'Empati', 'c', 'Diskriminasi dilarang dalam pelayanan'],
-                    ['Warga membutuhkan bantuan darurat. Sikap?', 'Bantu segera', 'Tunda', 'Abai', 'Suruh antri', 'Lapor dulu', 'a', 'Bantu segera untuk situasi darurat'],
-                    ['Warga mengajukan protes keras. Sikap terbaik?', 'Dengar dan cari solusi', 'Abai', 'Lawan', 'Panggil polisi', 'Kabur', 'a', 'Dengar dan cari solusi bersama'],
+                    // [soal, a, b, c, d, e, null, pembahasan, score_a, score_b, score_c, score_d, score_e]
+                    ['Warga datang mengeluh marah. Sikap Anda?', 'Balas marah', 'Dengar sabar empati', 'Suruh pulang', 'Abaikan', 'Panggil satpam', null, 'Mendengar sabar adalah pelayanan prima', 1, 5, 3, 2, 4],
+                    ['Warga buta huruf lansia urus dokumen. Sikap?', 'Bantu sabar', 'Suruh pulang', 'Bicara keras', 'Abaikan', 'Suruh loket lain', null, 'Bantu dengan sabar dan bahasa sederhana', 5, 3, 1, 2, 4],
+                    ['Warga tawari hadiah setelah dibantu. Sikap?', 'Tolak sopan', 'Terima', 'Minta lebih', 'Terima lapor', 'Terima syarat diam', null, 'Tolak sopan karena sudah kewajiban', 5, 2, 1, 4, 3],
+                    ['Warga layanan tak sesuai prosedur. Sikap?', 'Layani kasihan', 'Jelaskan prosedur cari solusi', 'Suruh pergi', 'Terima imbalan', 'Abaikan', null, 'Jelaskan prosedur dan cari solusi alternatif', 3, 5, 2, 1, 4],
+                    ['Warga tidak puas pelayanan. Sikap?', 'Minta maaf perbaiki', 'Bela diri', 'Jelaskan keterbatasan', 'Abaikan', 'Lapor atasan', null, 'Minta maaf dan berjanji perbaiki', 5, 2, 4, 1, 3],
+                    ['Pelayanan publik harus berdasarkan...', 'Kekuasaan', 'Prosedur standar', 'Keinginan pribadi', 'Perintah atasan', 'Kebiasaan', null, 'Berdasarkan prosedur dan standar', 2, 5, 1, 4, 3],
+                    ['Prinsip pelayanan prima adalah...', 'Cepat tepat ramah', 'Keras tegas', 'Lambat hati-hati', 'Semau saya', 'Sesuai mood', null, 'Cepat, tepat, ramah dan transparan', 5, 3, 4, 1, 2],
+                    ['Sikap harus dihindari dalam pelayanan...', 'Senyum', 'Sapa', 'Diskriminasi', 'Sabar', 'Empati', null, 'Diskriminasi dilarang dalam pelayanan', 8, 4, 1, 5, 7],
+                    ['Warga butuh bantuan darurat. Sikap?', 'Bantu segera', 'Tunda', 'Abai', 'Suruh antri', 'Lapor dulu', null, 'Bantu segera untuk situasi darurat', 5, 3, 1, 2, 4],
+                    ['Warga protes keras. Sikap terbaik?', 'Dengar cari solusi', 'Abai', 'Lawan', 'Panggil polisi', 'Kabur', null, 'Dengar dan cari solusi bersama', 5, 1, 2, 3, 4],
                 ]
             ],
             [
                 'name' => 'TKP - Integritas & Profesionalisme',
                 'category' => 'tkp',
-                'description' => 'Latihan soal TKP tentang integritas, kejujuran, dan profesionalisme ASN.',
+                'description' => 'Latihan TKP tentang integritas, kejujuran, dan profesionalisme ASN.',
                 'questions' => [
-                    ['Dompet ditemukan di kantin. Tindakan?', 'Ambil uang', 'Serahkan satpam', 'Cari pemilik', 'Pura tak lihat', 'Ambil uang dompet kembali', 'c', 'Cari pemilik dan kembalikan'],
-                    ['Atasan kritik hasil kerja. Sikap?', 'Terima dan perbaiki', 'Marah', 'Terima cuek', 'Salahkan pihak lain', 'Minta maaf', 'a', 'Terima kritik dan perbaiki'],
-                    ['Kesalahan laporan data. Sikap?', 'Akui dan perbaiki', 'Salahkan staf', 'Tutupi', 'Pura tak terjadi', 'Koreksi diam-diam', 'a', 'Akui dan perbaiki = integritas'],
-                    ['Rekan langgar aturan ringan. Tindakan?', 'Lapor atasan', 'Tegur pribadi sopan', 'Biarkan', 'Ikuti', 'Sebar ke rekan', 'b', 'Tegur pribadi dengan sopan'],
-                    ['Atasan suruh lakukan hal tidak etis. Sikap?', 'Ikuti perintah', 'Tolak sopan dan jelaskan', 'Diam tapi lakukan', 'Lapor lebih tinggi', 'Sebar ke rekan', 'b', 'Tolak dengan sopan dan jelaskan alasan etis'],
-                    ['Rekan dapat penghargaan. Sikap?', 'Bangga termotivasi', 'Iri', 'Biasa', 'Sebar isu', 'Selamat dan minta tips', 'e', 'Ucap selamat dan minta tips sukses'],
-                    ['Anda melihat rekan korupsi kecil. Tindakan?', 'Diam saja', 'Tegur langsung', 'Lapor atasan', 'Ikut serta', 'Sebar berita', 'c', 'Lapor ke atasan melalui saluran tepat'],
-                    ['Menemukan kesalahan sistem yang menguntungkan. Tindakan?', 'Manfaatkan', 'Lapor admin', 'Diam', 'Ajak rekan', 'Tutup mata', 'b', 'Laporkan ke admin/atasan'],
-                    ['Rekan meminjam uang tidak kembalikan. Sikap?', 'Tegur halus', 'Lapor atasan', 'Terima saja', 'Bicarakan dengan rekan lain', 'Hukum sendiri', 'a', 'Tegur dengan halus dan baik-baik'],
-                    ['Anda terlambat masuk kerja. Sikap?', 'Alasan macet', 'Akui dan minta maaf', 'Suruh orang lain absen', 'Diam saja', 'Pura sakit', 'b', 'Akui kesalahan dan minta maaf'],
+                    ['Dompet ditemukan di kantin. Tindakan?', 'Ambil uang buang KTP', 'Serahkan satpam', 'Cari pemilik', 'Pura tak lihat', 'Ambil uang dompet kembali', null, 'Cari pemilik dan kembalikan', 1, 4, 5, 2, 3],
+                    ['Atasan kritik hasil kerja. Sikap?', 'Terima dan perbaiki', 'Marah', 'Terima cuek', 'Salahkan pihak lain', 'Minta maaf', null, 'Terima kritik dan perbaiki', 5, 1, 3, 2, 4],
+                    ['Kesalahan laporan data. Sikap?', 'Akui dan perbaiki', 'Salahkan staf', 'Tutupi', 'Pura tak terjadi', 'Koreksi diam-diam', null, 'Akui dan perbaiki = integritas', 5, 1, 2, 3, 4],
+                    ['Rekan langgar aturan ringan. Tindakan?', 'Lapor atasan', 'Tegur pribadi sopan', 'Biarkan', 'Ikuti', 'Sebar ke rekan', null, 'Tegur pribadi dengan sopan', 4, 5, 2, 1, 3],
+                    ['Atasan suruh hal tidak etis. Sikap?', 'Ikuti perintah', 'Tolak sopan jelaskan', 'Diam tapi lakukan', 'Lapor lebih tinggi', 'Sebar ke rekan', null, 'Tolak sopan dan jelaskan alasan', 2, 5, 1, 4, 3],
+                    ['Rekan dapat penghargaan. Sikap?', 'Bangga termotivasi', 'Iri', 'Biasa', 'Sebar isu', 'Selamat minta tips', null, 'Ucap selamat dan minta tips', 5, 2, 3, 1, 4],
+                    ['Lihat rekan korupsi kecil. Tindakan?', 'Diam saja', 'Tegur langsung', 'Lapor atasan', 'Ikut serta', 'Sebar berita', null, 'Lapor ke atasan via saluran tepat', 2, 4, 5, 1, 3],
+                    ['Temukan error sistem menguntungkan. Tindakan?', 'Manfaatkan', 'Lapor admin', 'Diam', 'Ajak rekan', 'Tutup mata', null, 'Laporkan ke admin/atasan', 1, 5, 2, 3, 4],
+                    ['Rekan pinjam uang tak kembali. Sikap?', 'Tegur halus', 'Lapor atasan', 'Terima saja', 'Bahas rekan lain', 'Hukum sendiri', null, 'Tegur dengan halus dan baik', 5, 3, 4, 2, 1],
+                    ['Terlambat masuk kerja. Sikap?', 'Alasan macet', 'Akui minta maaf', 'Suruh orang absen', 'Diam saja', 'Pura sakit', null, 'Akui kesalahan dan minta maaf', 2, 5, 1, 3, 4],
                 ]
             ],
             [
                 'name' => 'TKP - Kerjasama Tim',
                 'category' => 'tkp',
-                'description' => 'Latihan soal TKP tentang kerja sama tim dan hubungan interpersonal.',
+                'description' => 'Latihan TKP tentang kerja sama tim dan hubungan interpersonal.',
                 'questions' => [
-                    ['Rapat beda pendapat tajam. Sikap?', 'Paksakan', 'Hargai cari solusi', 'Diam', 'Keluar', 'Ikut mayoritas', 'b', 'Hargai pendapat dan cari solusi bersama'],
-                    ['Proyek gagal Anda ketua tim. Sikap?', 'Salahkan anggota', 'Akui evaluasi bersama', 'Bubarkan', 'Pura tak tahu', 'Ambil alih sendiri', 'b', 'Akui kesalahan dan evaluasi bersama'],
-                    ['Dua rekan konflik saling jelekkan. Sikap?', 'Pihak kenal', 'Mediator netral', 'Biarkan', 'Hasut', 'Lapor atasan', 'b', 'Mediator netral'],
-                    ['Anda sibuk, rekan minta bantuan. Sikap?', 'Bantu semampu', 'Tolak', 'Bantu sambil ngeluh', 'Pura sibuk', 'Suruh minta lain', 'a', 'Bantu semampunya = gotong royong'],
-                    ['Rekan sakit dirawat. Sikap Anda?', 'Jenguk bantu', 'Abaikan', 'Tanya rekan', 'Gosip', 'Ambil tugas', 'a', 'Jenguk dan tawarkan bantuan'],
-                    ['Anggota tim malas. Anda ketua. Sikap?', 'Marah-marah', 'Bicara baik dan motivasi', 'Depak dari tim', 'Kerjakan sendiri', 'Lapor atasan', 'b', 'Bicara baik dan beri motivasi'],
-                    ['Rekan berprestasi. Sikap?', 'Acuh', 'Apresiasi dan belajar', 'Iri', 'Kritik', 'Saingi negatif', 'b', 'Apresiasi dan jadikan motivasi'],
-                    ['Rekan kesulitan. Sikap?', 'Bantu', 'Abai', 'Ledek', 'Tonton', 'Lapor', 'a', 'Bantu semampu kita'],
-                    ['Tim multidisiplin. Sikap?', 'Hargai perbedaan', 'Anggap rendah', 'Dipaksa sama', 'Acuh', 'Kerja sendiri', 'a', 'Hargai perbedaan dan sinergi'],
-                    ['Rekan baru. Sikap?', 'Bantu adaptasi', 'Acuh', 'Bebani', 'Ledek', 'Jauhi', 'a', 'Bantu beradaptasi dengan lingkungan'],
+                    ['Rapat beda pendapat. Sikap?', 'Paksakan', 'Hargai cari solusi', 'Diam', 'Keluar', 'Ikut mayoritas', null, 'Hargai pendapat dan cari solusi', 2, 5, 4, 1, 3],
+                    ['Proyek gagal Anda ketua. Sikap?', 'Salahkan anggota', 'Akui evaluasi bersama', 'Bubarkan', 'Pura tak tahu', 'Ambil alih sendiri', null, 'Akui kesalahan dan evaluasi bersama', 2, 5, 3, 1, 4],
+                    ['Dua rekan konflik. Sikap?', 'Pihak kenal', 'Mediator netral', 'Biarkan', 'Hasut', 'Lapor atasan', null, 'Mediator netral', 2, 5, 4, 1, 3],
+                    ['Anda sibuk, rekan minta bantuan. Sikap?', 'Bantu semampu', 'Tolak', 'Bantu sambil ngeluh', 'Pura sibuk', 'Suruh minta lain', null, 'Bantu semampunya = gotong royong', 5, 2, 3, 1, 4],
+                    ['Rekan sakit dirawat. Sikap Anda?', 'Jenguk bantu', 'Abaikan', 'Tanya rekan', 'Gosip', 'Ambil tugas', null, 'Jenguk dan tawarkan bantuan', 5, 1, 4, 2, 3],
+                    ['Anggota tim malas. Anda ketua. Sikap?', 'Marah-marah', 'Bicara baik motivasi', 'Depak dari tim', 'Kerjakan sendiri', 'Lapor atasan', null, 'Bicara baik dan beri motivasi', 2, 5, 3, 4, 1],
+                    ['Rekan berprestasi. Sikap?', 'Acuh', 'Apresiasi dan belajar', 'Iri', 'Kritik', 'Saingi negatif', null, 'Apresiasi dan jadikan motivasi', 2, 5, 1, 4, 3],
+                    ['Rekan kesulitan. Sikap?', 'Bantu', 'Abai', 'Ledek', 'Tonton', 'Lapor', null, 'Bantu semampu kita', 5, 1, 2, 3, 4],
+                    ['Tim multidisiplin. Sikap?', 'Hargai perbedaan', 'Anggap rendah', 'Dipaksa sama', 'Acuh', 'Kerja sendiri', null, 'Hargai perbedaan dan sinergi', 5, 1, 3, 2, 4],
+                    ['Rekan baru. Sikap?', 'Bantu adaptasi', 'Acuh', 'Bebani', 'Ledek', 'Jauhi', null, 'Bantu beradaptasi', 5, 2, 3, 1, 4],
                 ]
             ],
             [
                 'name' => 'TKP - Adaptasi & Inovasi',
                 'category' => 'tkp',
-                'description' => 'Latihan soal TKP tentang adaptasi terhadap perubahan dan inovasi.',
+                'description' => 'Latihan TKP tentang adaptasi perubahan dan inovasi.',
                 'questions' => [
-                    ['Sistem baru di instansi. Sikap?', 'Tolak', 'Antusias belajar', 'Tunggu rekan', 'Kritik terus', 'Pura bisa', 'b', 'Antusias belajar dan adaptasi'],
-                    ['Atasan tawari promosi. Sikap?', 'Terima siap', 'Tolak takut', 'Terima tak serius', 'Minta gantikan', 'Terima syarat', 'a', 'Terima penuh kesiapan'],
-                    ['Kebijakan baru kurang tepat. Sikap?', 'Masukan konstruktif', 'Tolak', 'Komentar medsos', 'Diam tak jalan', 'Jalan sambil protes', 'a', 'Masukan konstruktif = kepedulian'],
-                    ['Tugas sulit di luar kemampuan. Sikap?', 'Tolak', 'Terima dan belajar', 'Minta tolong diam-diam', 'Abai', 'Kerja asal', 'b', 'Terima dan berusaha belajar maksimal'],
-                    ['Pelatihan di luar kota. Sikap?', 'Antusias', 'Malas', 'Ikut tak serius', 'Tolak', 'Ikut jalan-jalan', 'a', 'Antusias mengikuti dan terapkan ilmunya'],
-                    ['Ada ide inovatif. Tindakan?', 'Sampaikan ke atasan', 'Simpan sendiri', 'Tertawakan', 'Tunggu orang lain', 'Terapkan tanpa izin', 'a', 'Sampaikan ke atasan dengan data pendukung'],
-                    ['Perubahan struktur organisasi. Sikap?', 'Tolak', 'Adaptasi', 'Protes', 'Diam', 'Pindah', 'b', 'Adaptasi dengan perubahan'],
-                    ['Teknologi baru di bidang kerja. Sikap?', 'Belajar', 'Tolak', 'Abai', 'Tunggu pensiun', 'Kritik', 'a', 'Belajar teknologi baru untuk efisiensi'],
-                    ['Metode kerja baru. Sikap?', 'Coba dan evaluasi', 'Tolak mentah', 'Terima tanpa kritik', 'Acuh', 'Komentar negatif', 'a', 'Coba dan evaluasi secara objektif'],
-                    ['Rutinitas kerja membosankan. Sikap?', 'Cari inovasi', 'Terima saja', 'Keluh', 'Malas', 'Pindah', 'a', 'Cari cara baru untuk tingkatkan produktivitas'],
+                    ['Sistem baru di instansi. Sikap?', 'Tolak', 'Antusias belajar', 'Tunggu rekan', 'Kritik terus', 'Pura bisa', null, 'Antusias belajar dan adaptasi', 1, 5, 3, 2, 4],
+                    ['Atasan tawari promosi. Sikap?', 'Terima siap', 'Tolak takut', 'Terima tak serius', 'Minta gantikan', 'Terima syarat', null, 'Terima penuh kesiapan', 5, 2, 1, 3, 4],
+                    ['Kebijakan baru kurang tepat. Sikap?', 'Masukan konstruktif', 'Tolak', 'Komentar medsos', 'Diam tak jalan', 'Jalan sambil protes', null, 'Masukan konstruktif = kepedulian', 5, 2, 1, 3, 4],
+                    ['Tugas sulit di luar kemampuan. Sikap?', 'Tolak', 'Terima dan belajar', 'Minta tolong diam', 'Abai', 'Kerja asal', null, 'Terima dan berusaha belajar maksimal', 2, 5, 3, 1, 4],
+                    ['Pelatihan di luar kota. Sikap?', 'Antusias', 'Malas', 'Ikut tak serius', 'Tolak', 'Ikut jalan-jalan', null, 'Antusias mengikuti dan terapkan ilmu', 5, 2, 4, 1, 3],
+                    ['Ada ide inovatif. Tindakan?', 'Sampaikan ke atasan', 'Simpan sendiri', 'Tertawakan', 'Tunggu orang lain', 'Terapkan tanpa izin', null, 'Sampaikan dengan data pendukung', 5, 2, 3, 4, 1],
+                    ['Perubahan struktur organisasi. Sikap?', 'Tolak', 'Adaptasi', 'Protes', 'Diam', 'Pindah', null, 'Adaptasi dengan perubahan', 2, 5, 3, 4, 1],
+                    ['Teknologi baru di bidang kerja. Sikap?', 'Belajar', 'Tolak', 'Abai', 'Tunggu pensiun', 'Kritik', null, 'Belajar teknologi baru untuk efisiensi', 5, 1, 2, 4, 3],
+                    ['Metode kerja baru. Sikap?', 'Coba dan evaluasi', 'Tolak mentah', 'Terima tanpa kritik', 'Acuh', 'Komen negatif', null, 'Coba dan evaluasi secara objektif', 5, 1, 3, 2, 4],
+                    ['Rutinitas membosankan. Sikap?', 'Cari inovasi', 'Terima saja', 'Keluh', 'Malas', 'Pindah', null, 'Cari cara baru tingkatkan produktivitas', 5, 3, 2, 1, 4],
                 ]
             ],
             [
-                'name' => 'TKP - Kepemimpinan & Pengambilan Keputusan',
+                'name' => 'TKP - Kepemimpinan & Keputusan',
                 'category' => 'tkp',
-                'description' => 'Latihan soal TKP tentang kepemimpinan, pengambilan keputusan, dan tanggung jawab.',
+                'description' => 'Latihan TKP tentang kepemimpinan, pengambilan keputusan, dan tanggung jawab.',
                 'questions' => [
-                    ['Anggaran instansi dipotong, Anda pimpinan. Sikap?', 'Dana pribadi', 'Usul efisiensi prioritas', 'Diam', 'Potong sepihak', 'Pinjam pihak3', 'b', 'Usul efisiensi dan prioritas sesuai prosedur'],
-                    ['Lihat kecelakaan di jalan. Tindakan?', 'Berhenti tolong', 'Abaikan takut', 'Tonton', 'Video medsos', 'Hubungi polisi', 'a', 'Berhenti dan beri pertolongan'],
-                    ['Tugas deadline bersamaan. Sikap?', 'Prioritas bertahap', 'Panik', 'Asal selesai', 'Tunda', 'Minta perpanjang', 'a', 'Buat prioritas dan selesaikan bertahap'],
-                    ['Rapat panjang tak efektif. Sikap?', 'Tetap fokus', 'Tidur', 'Main HP', 'Keluar masuk', 'Usul skors', 'a', 'Tetap fokus dan berpartisipasi aktif'],
-                    ['Anda ketua tim latar belakang berbeda. Sikap?', 'Bagi tugas sesuai kompetensi', 'Otoriter', 'Kerjakan sendiri', 'Beda-bedakan', 'Tugas asal', 'a', 'Hargai perbedaan, bagi tugas sesuai kompetensi'],
-                    ['Atasan minta pendapat, belum yakin. Sikap?', 'Bilang tak tahu', 'Beri pendapat berdasarkan data', 'Diam', 'Buat alasan', 'Bohong yakin', 'b', 'Beri pendapat berdasarkan data yang ada'],
-                    ['Bencana alam melanda. Tindakan?', 'Partisipasi bantu', 'Masa bodoh', 'Tunggu perintah', 'Sebar hoax', 'Cari untung', 'a', 'Partisipasi dalam bantuan kemanusiaan'],
-                    ['Program bakti hari libur. Sikap?', 'Tolak', 'Partisipasi sukarela', 'Ikut main', 'Tak datang', 'Datang terlambat', 'b', 'Ikut partisipasi dengan sukarela'],
-                    ['Anda melakukan kesalahan. Sikap?', 'Akui perbaiki', 'Salahkan', 'Tutupi', 'Pura tak terjadi', 'Koreksi diam', 'a', 'Akui dan perbaiki, tunjukkan tanggung jawab'],
-                    ['Atasan tidak ada, ada masalah. Sikap?', 'Tunggu', 'Putuskan sesuai prosedur', 'Lempar ke rekan', 'Pulang', 'Abai', 'b', 'Putuskan sesuai prosedur yang berlaku'],
+                    ['Anggaran dipotong, Anda pimpinan. Sikap?', 'Dana pribadi', 'Usul efisiensi prioritas', 'Diam', 'Potong sepihak', 'Pinjam pihak3', null, 'Usul efisiensi dan prioritas sesuai prosedur', 3, 5, 2, 1, 4],
+                    ['Lihat kecelakaan di jalan. Tindakan?', 'Berhenti tolong', 'Abaikan takut', 'Tonton', 'Video medsos', 'Hubungi polisi', null, 'Berhenti dan beri pertolongan', 5, 2, 3, 1, 4],
+                    ['Tugas deadline bersamaan. Sikap?', 'Prioritas bertahap', 'Panik', 'Asal selesai', 'Tunda', 'Minta perpanjang', null, 'Buat prioritas dan selesaikan bertahap', 5, 2, 3, 1, 4],
+                    ['Rapat panjang tak efektif. Sikap?', 'Tetap fokus', 'Tidur', 'Main HP', 'Keluar masuk', 'Usul skors', null, 'Tetap fokus dan berpartisipasi aktif', 5, 1, 2, 3, 4],
+                    ['Ketua tim latar berbeda. Sikap?', 'Bagi tugas sesuai kompetensi', 'Otoriter', 'Kerjakan sendiri', 'Beda-bedakan', 'Tugas asal', null, 'Hargai perbedaan, bagi tugas sesuai kompetensi', 5, 2, 4, 1, 3],
+                    ['Atasan minta pendapat, belum yakin. Sikap?', 'Bilang tak tahu', 'Beri pendapat data', 'Diam', 'Buat alasan', 'Bohong yakin', null, 'Beri pendapat berdasarkan data yang ada', 3, 5, 2, 4, 1],
+                    ['Bencana alam. Tindakan?', 'Partisipasi bantu', 'Masa bodoh', 'Tunggu perintah', 'Sebar hoax', 'Cari untung', null, 'Partisipasi dalam bantuan kemanusiaan', 5, 1, 4, 2, 3],
+                    ['Bakti hari libur. Sikap?', 'Tolak', 'Partisipasi sukarela', 'Ikut main-main', 'Tak datang', 'Datang terlambat', null, 'Ikut partisipasi dengan sukarela', 2, 5, 3, 1, 4],
+                    ['Melakukan kesalahan. Sikap?', 'Akui perbaiki', 'Salahkan', 'Tutupi', 'Pura tak terjadi', 'Koreksi diam', null, 'Akui dan perbaiki, tunjukkan tanggung jawab', 5, 1, 2, 3, 4],
+                    ['Atasan tidak ada, ada masalah. Sikap?', 'Tunggu', 'Putuskan sesuai prosedur', 'Lempar rekan', 'Pulang', 'Abai', null, 'Putuskan sesuai prosedur yang berlaku', 3, 5, 2, 1, 4],
                 ]
             ],
         ];
@@ -290,7 +291,7 @@ class PackageSeeder extends Seeder
             ]);
 
             foreach ($pkg['questions'] as $i => $q) {
-                PackageQuestion::create([
+                $data = [
                     'package_id' => $package->id,
                     'order_number' => $i + 1,
                     'question_text' => $q[0],
@@ -298,7 +299,19 @@ class PackageSeeder extends Seeder
                     'option_d' => $q[4], 'option_e' => $q[5],
                     'correct_answer' => $q[6],
                     'explanation' => $q[7],
-                ]);
+                ];
+
+                // Untuk TKP: isi skor 1-5 per opsi, correct_answer = null
+                if ($pkg['category'] === 'tkp') {
+                    $data['correct_answer'] = null;
+                    $data['score_a'] = $q[8];
+                    $data['score_b'] = $q[9];
+                    $data['score_c'] = $q[10];
+                    $data['score_d'] = $q[11];
+                    $data['score_e'] = $q[12];
+                }
+
+                PackageQuestion::create($data);
             }
         }
 

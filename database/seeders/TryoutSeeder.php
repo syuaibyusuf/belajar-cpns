@@ -106,31 +106,32 @@ class TryoutSeeder extends Seeder
         ];
 
         $tkpPool = [
-            ['Warga marah mengeluh, sikap Anda?', 'Balas marah', 'Dengar sabar empati', 'Suruh pulang', 'Abaikan', 'Panggil satpam', 'b', 'Mendengar sabar adalah pelayanan prima'],
-            ['Rekan langgar ringan, tindakan?', 'Lapor atasan', 'Tegur pribadi sopan', 'Biarkan', 'Ikut langgar', 'Sebar ke rekan', 'b', 'Tegur pribadi adalah langkah pertama tepat'],
-            ['Dompet ditemukan, tindakan?', 'Ambil uangnya', 'Serahkan satpam', 'Cari pemilik', 'Pura tak lihat', 'Ambil uang dompet kembali', 'c', 'Kembalikan langsung ke pemilik'],
-            ['Atasan kritik hasil kerja?', 'Terima dan perbaiki', 'Marah', 'Terima tak indahkan', 'Salahkan eksternal', 'Minta maaf', 'a', 'Terima kritik dan perbaiki'],
-            ['Rekan dapat penghargaan?', 'Bangga termotivasi', 'Iri', 'Biasa', 'Sebar isu', 'Selamat dan minta tips', 'e', 'Ucapkan selamat dan minta tips sukses'],
-            ['Tugas deadline mepet?', 'Panik menyerah', 'Lembur sampai selesai', 'Salahkan orang', 'Cari alasan', 'Tunda', 'b', 'Lembur sampai selesai adalah profesional'],
-            ['Rapat beda pendapat tajam?', 'Paksakan pendapat', 'Hargai dan cari solusi', 'Diam', 'Keluar', 'Ikut mayoritas', 'b', 'Musyawarah dan hargai pendapat lain'],
-            ['Sistem baru di instansi?', 'Tolak', 'Antusias belajar', 'Tunggu rekan', 'Kritik terus', 'Pura bisa', 'b', 'Antusias belajar adaptasi terbaik'],
-            ['Proyek gagal, Anda ketua?', 'Salahkan anggota', 'Akui bersama dan evaluasi', 'Menyerah bubar', 'Pura tak tahu', 'Ambil alih sendiri', 'b', 'Akui kesalahan bersama dan evaluasi'],
-            ['Dua rekan konflik?', 'Pihak kenal dekat', 'Mediator netral', 'Biarkan', 'Hasut', 'Lapor atasan', 'b', 'Mediator netral adalah yang terbaik'],
-            ['Rekan sakit dirawat?', 'Jenguk tawarkan bantuan', 'Abaikan', 'Tanya via rekan', 'Gosip', 'Ambil alih tugas', 'a', 'Jenguk dan tawarkan bantuan'],
-            ['Atasan tawari promosi?', 'Terima siap', 'Tolak takut', 'Terima tak serius', 'Minta gantikan', 'Terima syarat', 'a', 'Terima penuh kesiapan dan komitmen'],
-            ['Kebijakan baru kurang tepat?', 'Masukan konstruktif', 'Tolak', 'Komentar medsos', 'Diam tak jalan', 'Jalan sambil protes', 'a', 'Masukan konstruktif bentuk kepedulian'],
-            ['Lihat kecelakaan?', 'Berhenti tolong', 'Abaikan takut', 'Tonton', 'Video medsos', 'Hubungi polisi', 'a', 'Menolong langsung dan hubungi berwenang'],
-            ['Anggaran dipotong, Anda pimpinan?', 'Dana pribadi', 'Usul efisiensi', 'Diam saja', 'Potong sepihak', 'Pinjam pihak3', 'b', 'Usul efisiensi dan prioritas sesuai prosedur'],
-            ['Warga buta huruf lansia urus dokumen?', 'Bantu sabar', 'Suruh pulang', 'Bicara keras', 'Abaikan', 'Suruh loket lain', 'a', 'Bantu sabar bahasa sederhana'],
-            ['Warga tawari hadiah?', 'Tolak sopan', 'Terima', 'Minta lebih', 'Terima lapor', 'Terima syarat diam', 'a', 'Tolak sopan karena kewajiban'],
-            ['Anda sibuk, rekan minta bantuan?', 'Bantu semampu', 'Tolak', 'Bantu ngeluh', 'Pura sibuk', 'Suruh minta lain', 'a', 'Bantu semampunya = gotong royong'],
-            ['Kesalahan laporan data?', 'Akui dan perbaiki', 'Salahkan staf', 'Tutupi', 'Pura tak terjadi', 'Koreksi diam-diam', 'a', 'Akui dan perbaiki = integritas'],
-            ['Rapat panjang tak efektif?', 'Tetap fokus', 'Tidur', 'Main HP', 'Keluar masuk', 'Usul skors', 'a', 'Tetap fokus adalah profesionalisme'],
-            ['Menjadi ketua tim beragam latar?', 'Bagi tugas sesuai kompetensi', 'Otoriter', 'Kerjakan sendiri', 'Beda-bedakan', 'Tugas asal', 'a', 'Hargai perbedaan, bagi tugas sesuai kompetensi'],
-            ['Pelatihan di luar kota?', 'Antusias ikuti', 'Malas', 'Ikut tak serius', 'Tolak', 'Ikut jalan-jalan', 'a', 'Antusias mengikuti dan terapkan ilmunya'],
-            ['Rekan kewalahan, Anda juga sibuk?', 'Bantu semampu', 'Tolak mentah', 'Bantu ngeluh', 'Pura sibuk', 'Suruh minta lain', 'a', 'Bantu semampunya tanpa abaikan tugas sendiri'],
-            ['Warga layanan tak sesuai prosedur?', 'Layani kasihan', 'Jelaskan prosedur cari solusi', 'Suruh pergi', 'Terima imbalan', 'Abaikan', 'b', 'Jelaskan prosedur dan cari solusi alternatif'],
-            ['Atasan minta pendapat, belum yakin?', 'Bilang tak tahu', 'Beri pendapat berdasarkan data', 'Diam', 'Buat alasan', 'Bohong yakin', 'b', 'Berikan pendapat berdasarkan data yang ada'],
+            // [soal, a, b, c, d, e, null, pembahasan, score_a, score_b, score_c, score_d, score_e]
+            ['Warga marah mengeluh, sikap Anda?', 'Balas marah', 'Dengar sabar empati', 'Suruh pulang', 'Abaikan', 'Panggil satpam', null, 'Mendengar sabar adalah pelayanan prima', 1, 5, 3, 2, 4],
+            ['Rekan langgar ringan, tindakan?', 'Lapor atasan', 'Tegur pribadi sopan', 'Biarkan', 'Ikut langgar', 'Sebar ke rekan', null, 'Tegur pribadi adalah langkah pertama tepat', 4, 5, 2, 1, 3],
+            ['Dompet ditemukan, tindakan?', 'Ambil uangnya', 'Serahkan satpam', 'Cari pemilik', 'Pura tak lihat', 'Ambil uang dompet kembali', null, 'Kembalikan langsung ke pemilik', 1, 4, 5, 2, 3],
+            ['Atasan kritik hasil kerja?', 'Terima dan perbaiki', 'Marah', 'Terima tak indahkan', 'Salahkan eksternal', 'Minta maaf', null, 'Terima kritik dan perbaiki', 5, 1, 3, 2, 4],
+            ['Rekan dapat penghargaan?', 'Bangga termotivasi', 'Iri', 'Biasa', 'Sebar isu', 'Selamat dan minta tips', null, 'Ucapkan selamat dan minta tips sukses', 5, 1, 3, 2, 4],
+            ['Tugas deadline mepet?', 'Panik menyerah', 'Lembur sampai selesai', 'Salahkan orang', 'Cari alasan', 'Tunda', null, 'Lembur sampai selesai adalah profesional', 2, 5, 1, 3, 4],
+            ['Rapat beda pendapat tajam?', 'Paksakan pendapat', 'Hargai dan cari solusi', 'Diam', 'Keluar', 'Ikut mayoritas', null, 'Musyawarah dan hargai pendapat lain', 2, 5, 4, 1, 3],
+            ['Sistem baru di instansi?', 'Tolak', 'Antusias belajar', 'Tunggu rekan', 'Kritik terus', 'Pura bisa', null, 'Antusias belajar adaptasi terbaik', 1, 5, 3, 2, 4],
+            ['Proyek gagal, Anda ketua?', 'Salahkan anggota', 'Akui bersama dan evaluasi', 'Menyerah bubar', 'Pura tak tahu', 'Ambil alih sendiri', null, 'Akui kesalahan bersama dan evaluasi', 2, 5, 3, 1, 4],
+            ['Dua rekan konflik?', 'Pihak kenal dekat', 'Mediator netral', 'Biarkan', 'Hasut', 'Lapor atasan', null, 'Mediator netral adalah yang terbaik', 2, 5, 4, 1, 3],
+            ['Rekan sakit dirawat?', 'Jenguk tawarkan bantuan', 'Abaikan', 'Tanya via rekan', 'Gosip', 'Ambil alih tugas', null, 'Jenguk dan tawarkan bantuan', 5, 1, 4, 2, 3],
+            ['Atasan tawari promosi?', 'Terima siap', 'Tolak takut', 'Terima tak serius', 'Minta gantikan', 'Terima syarat', null, 'Terima penuh kesiapan dan komitmen', 5, 2, 1, 3, 4],
+            ['Kebijakan baru kurang tepat?', 'Masukan konstruktif', 'Tolak', 'Komentar medsos', 'Diam tak jalan', 'Jalan sambil protes', null, 'Masukan konstruktif bentuk kepedulian', 5, 2, 1, 3, 4],
+            ['Lihat kecelakaan?', 'Berhenti tolong', 'Abaikan takut', 'Tonton', 'Video medsos', 'Hubungi polisi', null, 'Menolong langsung dan hubungi berwenang', 5, 2, 3, 1, 4],
+            ['Anggaran dipotong, Anda pimpinan?', 'Dana pribadi', 'Usul efisiensi', 'Diam saja', 'Potong sepihak', 'Pinjam pihak3', null, 'Usul efisiensi dan prioritas sesuai prosedur', 3, 5, 2, 1, 4],
+            ['Warga buta huruf lansia urus dokumen?', 'Bantu sabar', 'Suruh pulang', 'Bicara keras', 'Abaikan', 'Suruh loket lain', null, 'Bantu sabar bahasa sederhana', 5, 3, 1, 2, 4],
+            ['Warga tawari hadiah?', 'Tolak sopan', 'Terima', 'Minta lebih', 'Terima lapor', 'Terima syarat diam', null, 'Tolak sopan karena kewajiban', 5, 2, 1, 4, 3],
+            ['Anda sibuk, rekan minta bantuan?', 'Bantu semampu', 'Tolak', 'Bantu ngeluh', 'Pura sibuk', 'Suruh minta lain', null, 'Bantu semampunya = gotong royong', 5, 2, 3, 1, 4],
+            ['Kesalahan laporan data?', 'Akui dan perbaiki', 'Salahkan staf', 'Tutupi', 'Pura tak terjadi', 'Koreksi diam-diam', null, 'Akui dan perbaiki = integritas', 5, 1, 2, 3, 4],
+            ['Rapat panjang tak efektif?', 'Tetap fokus', 'Tidur', 'Main HP', 'Keluar masuk', 'Usul skors', null, 'Tetap fokus adalah profesionalisme', 5, 1, 2, 3, 4],
+            ['Ketua tim beragam latar?', 'Bagi tugas sesuai kompetensi', 'Otoriter', 'Kerjakan sendiri', 'Beda-bedakan', 'Tugas asal', null, 'Hargai perbedaan, bagi tugas sesuai kompetensi', 5, 2, 4, 1, 3],
+            ['Pelatihan di luar kota?', 'Antusias ikuti', 'Malas', 'Ikut tak serius', 'Tolak', 'Ikut jalan-jalan', null, 'Antusias mengikuti dan terapkan ilmunya', 5, 2, 4, 1, 3],
+            ['Rekan kewalahan, Anda juga sibuk?', 'Bantu semampu', 'Tolak mentah', 'Bantu ngeluh', 'Pura sibuk', 'Suruh minta lain', null, 'Bantu semampunya tanpa abaikan tugas sendiri', 5, 2, 3, 1, 4],
+            ['Warga layanan tak sesuai prosedur?', 'Layani kasihan', 'Jelaskan prosedur cari solusi', 'Suruh pergi', 'Terima imbalan', 'Abaikan', null, 'Jelaskan prosedur dan cari solusi alternatif', 3, 5, 2, 1, 4],
+            ['Atasan minta pendapat, belum yakin?', 'Bilang tak tahu', 'Beri pendapat berdasarkan data', 'Diam', 'Buat alasan', 'Bohong yakin', null, 'Berikan pendapat berdasarkan data yang ada', 3, 5, 2, 4, 1],
         ];
 
         $order = 0;
@@ -189,16 +190,19 @@ class TryoutSeeder extends Seeder
             $selected = array_slice($tkpPool, 0, $t['tkp']);
             foreach ($selected as $q) {
                 $order++;
-                TryoutQuestion::create([
+                $data = [
                     'tryout_id' => $tryout->id,
                     'order_number' => $order,
                     'category' => 'tkp',
                     'question_text' => $q[0],
                     'option_a' => $q[1], 'option_b' => $q[2], 'option_c' => $q[3],
                     'option_d' => $q[4], 'option_e' => $q[5],
-                    'correct_answer' => $q[6],
+                    'correct_answer' => null,
                     'explanation' => $q[7],
-                ]);
+                    'score_a' => $q[8], 'score_b' => $q[9], 'score_c' => $q[10],
+                    'score_d' => $q[11], 'score_e' => $q[12],
+                ];
+                TryoutQuestion::create($data);
             }
         }
 
