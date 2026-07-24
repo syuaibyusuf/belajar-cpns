@@ -11,92 +11,80 @@ class QuestionSeeder extends Seeder
     {
         // Soal TWK
         $twkQuestions = [
-            [
-                'question_text' => 'Pancasila sebagai dasar negara disahkan pada tanggal...',
-                'option_a' => '17 Agustus 1945',
-                'option_b' => '18 Agustus 1945',
-                'option_c' => '1 Juni 1945',
-                'option_d' => '22 Juni 1945',
-                'option_e' => '17 Juli 1945',
-                'correct_answer' => 'b',
-                'explanation' => 'Pancasila disahkan bersama UUD 1945 pada sidang PPKI tanggal 18 Agustus 1945'
-            ],
-            [
-                'question_text' => 'Sila pertama Pancasila adalah...',
-                'option_a' => 'Kemanusiaan yang adil dan beradab',
-                'option_b' => 'Persatuan Indonesia',
-                'option_c' => 'Kerakyatan yang dipimpin oleh hikmat kebijaksanaan',
-                'option_d' => 'Ketuhanan Yang Maha Esa',
-                'option_e' => 'Keadilan sosial bagi seluruh rakyat Indonesia',
-                'correct_answer' => 'd',
-                'explanation' => 'Sila pertama adalah Ketuhanan Yang Maha Esa'
-            ],
-            [
-                'question_text' => 'Bendera Indonesia disebut...',
-                'option_a' => 'Merah Putih',
-                'option_b' => 'Sang Saka Merah Putih',
-                'option_c' => 'Dwi Warna',
-                'option_d' => 'Merah dan Putih',
-                'option_e' => 'Sang Merah Putih',
-                'correct_answer' => 'b',
-                'explanation' => 'Bendera Indonesia disebut Sang Saka Merah Putih'
-            ]
+            ['Pancasila sebagai dasar negara disahkan pada tanggal...', '17 Agustus 1945', '18 Agustus 1945', '1 Juni 1945', '22 Juni 1945', '17 Juli 1945', 'b', 'Disahkan sidang PPKI 18 Agustus 1945'],
+            ['Sila pertama Pancasila adalah...', 'Kemanusiaan', 'Persatuan Indonesia', 'Kerakyatan', 'Ketuhanan YME', 'Keadilan Sosial', 'd', 'Sila pertama: Ketuhanan Yang Maha Esa'],
+            ['Bhinneka Tunggal Ika berasal dari kitab...', 'Arjunawiwaha', 'Sutasoma', 'Negarakertagama', 'Pararaton', 'Ramayana', 'b', 'Kitab Sutasoma karya Mpu Tantular'],
+            ['Bentuk negara Indonesia adalah...', 'Serikat', 'Kesatuan', 'Federal', 'Konfederasi', 'Persemakmuran', 'b', 'Negara kesatuan (Pasal 1 Ayat 1)'],
+            ['Lagu kebangsaan Indonesia...', 'Rayuan Pulau Kelapa', 'Indonesia Raya', 'Garuda Pancasila', 'Halo Bandung', 'Tanah Airku', 'b', 'Indonesia Raya oleh WR Soepratman'],
+            ['Hari Kesaktian Pancasila...', '1 Juni', '18 Agustus', '1 Oktober', '28 Oktober', '10 November', 'c', '1 Oktober'],
+            ['Sistem pemerintahan RI...', 'Parlementer', 'Presidensial', 'Semipresidensial', 'Monarki', 'Federal', 'b', 'Sistem presidensial'],
+            ['UUD 1945 amandemen... kali', '2', '3', '4', '5', '6', 'c', '4 kali (1999-2002)'],
+            ['NKRI singkatan dari...', 'Negara Kesatuan RI', 'Negara Kebangsaan RI', 'Nusa Karya RI', 'Negara Kesatuan Rakyat RI', 'Negara Kesejahteraan RI', 'a', 'Negara Kesatuan Republik Indonesia'],
+            ['Pembukaan UUD 1945 terdiri... alinea', '2', '3', '4', '5', '6', 'c', '4 alinea'],
         ];
 
         foreach ($twkQuestions as $q) {
-            $q['category'] = 'twk';
-            $q['difficulty'] = 'medium';
-            Question::create($q);
+            Question::create([
+                'category' => 'twk',
+                'question_text' => $q[0],
+                'option_a' => $q[1], 'option_b' => $q[2], 'option_c' => $q[3],
+                'option_d' => $q[4], 'option_e' => $q[5],
+                'correct_answer' => $q[6],
+                'explanation' => $q[7],
+                'difficulty' => 'medium',
+            ]);
         }
 
         // Soal TIU
         $tiuQuestions = [
-            [
-                'question_text' => 'Sinonim dari kata "KOMPETEN" adalah...',
-                'option_a' => 'Bodoh',
-                'option_b' => 'Mampu',
-                'option_c' => 'Malas',
-                'option_d' => 'Pandai',
-                'option_e' => 'Cerdik',
-                'correct_answer' => 'b',
-                'explanation' => 'Kompeten artinya mampu atau cakap'
-            ],
-            [
-                'question_text' => 'Jika 2x + 5 = 15, maka nilai x adalah...',
-                'option_a' => '3',
-                'option_b' => '4',
-                'option_c' => '5',
-                'option_d' => '6',
-                'option_e' => '7',
-                'correct_answer' => 'c',
-                'explanation' => '2x = 15 - 5 = 10, maka x = 5'
-            ]
+            ['Sinonim "Kompeten"...', 'Lemah', 'Mampu', 'Bodoh', 'Malas', 'Cerdik', 'b', 'Kompeten = mampu'],
+            ['Antonim "Mayoritas"...', 'Minoritas', 'Sebagian', 'Seluruh', 'Banyak', 'Rata-rata', 'a', 'Mayoritas >< Minoritas'],
+            ['2, 4, 6, 8, 10, ...', '11', '12', '13', '14', '15', 'b', 'Pola +2: 10+2=12'],
+            ['3 apel Rp15.000, 5 apel?', '20.000', '25.000', '30.000', '35.000', '40.000', 'b', 'Per apel 5.000'],
+            ['Sinonim "Kontradiksi"...', 'Persamaan', 'Pertentangan', 'Perbedaan', 'Keselarasan', 'Kecocokan', 'b', 'Kontradiksi = pertentangan'],
+            ['Antonim "Modern"...', 'Baru', 'Canggih', 'Kuno', 'Maju', 'Mutakhir', 'c', 'Modern >< Kuno'],
+            ['Sinonim "Adaptasi"...', 'Perubahan', 'Penyesuaian', 'Perbaikan', 'Pengembangan', 'Pembaruan', 'b', 'Adaptasi = penyesuaian'],
+            ['3, 6, 12, 24, ...', '30', '36', '40', '48', '50', 'd', 'Pola x2: 24x2=48'],
+            ['25% dari 200?', '25', '40', '50', '60', '75', 'c', '25/100x200=50'],
+            ['x + 5 = 12, x = ...', '5', '6', '7', '8', '9', 'c', 'x=12-5=7'],
         ];
 
         foreach ($tiuQuestions as $q) {
-            $q['category'] = 'tiu';
-            $q['difficulty'] = 'medium';
-            Question::create($q);
+            Question::create([
+                'category' => 'tiu',
+                'question_text' => $q[0],
+                'option_a' => $q[1], 'option_b' => $q[2], 'option_c' => $q[3],
+                'option_d' => $q[4], 'option_e' => $q[5],
+                'correct_answer' => $q[6],
+                'explanation' => $q[7],
+                'difficulty' => 'medium',
+            ]);
         }
 
         // Soal TKP
         $tkpQuestions = [
-            [
-                'question_text' => 'Saat ada tugas kantor yang deadline-nya mepet, sikap Anda...',
-                'option_a' => 'Panik dan menyerah',
-                'option_b' => 'Bekerja lembur sampai selesai',
-                'option_c' => 'Menyalahkan orang lain',
-                'option_d' => 'Mencari alasan',
-                'option_e' => 'Menunda pekerjaan',
-                'correct_answer' => 'b',
-                'explanation' => 'Sikap profesional adalah bekerja lembur sampai selesai'
-            ]
+            ['Tugas deadline mepet, sikap?', 'Panik menyerah', 'Lembur selesai', 'Salahkan orang', 'Cari alasan', 'Tunda', 'b', 'Lembur sampai selesai = profesional'],
+            ['Rekan sakit dirawat, sikap?', 'Jenguk bantu', 'Abaikan', 'Tanya rekan', 'Gosip', 'Ambil tugas', 'a', 'Jenguk dan tawarkan bantuan'],
+            ['Atasan kritik hasil kerja?', 'Terima perbaiki', 'Marah', 'Terima cuek', 'Salahkan pihak lain', 'Minta maaf', 'a', 'Terima kritik dan perbaiki'],
+            ['Rapat beda pendapat?', 'Paksakan', 'Hargai cari solusi', 'Diam', 'Keluar', 'Ikut mayoritas', 'b', 'Hargai pendapat dan cari solusi bersama'],
+            ['Dompet ditemukan?', 'Ambil uang', 'Serahkan satpam', 'Cari pemilik', 'Pura lihat', 'Ambil uang dompet kembali', 'c', 'Cari pemilik dan kembalikan'],
+            ['Warga marah mengeluh?', 'Balas marah', 'Dengar sabar', 'Suruh pulang', 'Abaikan', 'Panggil satpam', 'b', 'Dengar dengan sabar dan empati'],
+            ['Rekan langgar ringan?', 'Lapor atasan', 'Tegur pribadi', 'Biarkan', 'Ikuti', 'Sebarkan', 'b', 'Tegur pribadi dengan sopan'],
+            ['Rekan dapat penghargaan?', 'Bangga motivasi', 'Iri', 'Biasa', 'Sebar isu', 'Selamat minta tips', 'e', 'Ucapkan selamat dan minta tips'],
+            ['Sistem baru di kantor?', 'Tolak', 'Antusias belajar', 'Tunggu rekan', 'Kritik', 'Pura bisa', 'b', 'Antusias belajar dan beradaptasi'],
+            ['Proyek gagal sebagai ketua?', 'Salahkan anggota', 'Akui evaluasi', 'Bubarkan', 'Pura tak tahu', 'Ambil alih sendiri', 'b', 'Akui kesalahan dan evaluasi bersama'],
         ];
 
         foreach ($tkpQuestions as $q) {
-            $q['category'] = 'tkp';
-            $q['difficulty'] = 'medium';
-            Question::create($q);
+            Question::create([
+                'category' => 'tkp',
+                'question_text' => $q[0],
+                'option_a' => $q[1], 'option_b' => $q[2], 'option_c' => $q[3],
+                'option_d' => $q[4], 'option_e' => $q[5],
+                'correct_answer' => $q[6],
+                'explanation' => $q[7],
+                'difficulty' => 'medium',
+            ]);
         }
     }
 }
