@@ -5,13 +5,16 @@ namespace Database\Seeders;
 use App\Models\Tryout;
 use App\Models\TryoutQuestion;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class TryoutSeeder extends Seeder
 {
     public function run(): void
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
         TryoutQuestion::truncate();
         Tryout::truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1');
 
         $tryouts = [
             [
